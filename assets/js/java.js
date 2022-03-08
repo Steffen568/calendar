@@ -36,14 +36,15 @@ function scheduelList() {
             rowDiv.append(timeLabel);
 
         // create input text box > save input to loval storage
-        var textInput = $('<textInput>');
-            textInput.attr('class', 'col-8 col-sm-10 description' + timeClass);
-            textInput.text(localStorage.getItem('btn' + i));
+        var textInput = $('<textarea>');
+            textInput.attr('class', 'col-8 col-sm-10 description');
+            textInput.addClass(timeClass)
+            // textInput.text(localStorage.);
             rowDiv.append(textInput);
 
         // create save button
         var saveButton = $('<button>');
-            saveButton.attr('class', 'saveBtn');
+            saveButton.attr('class', 'col-2 col-sm-1 fas fa-save saveBtn');
             saveButton.attr('id', 'btn' + i)
             rowDiv.append(saveButton)
     }
