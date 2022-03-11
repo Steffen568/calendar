@@ -46,8 +46,8 @@ function scheduelList() {
         // create save button
         var saveButton = $('<button>');
             saveButton.attr('class', 'col-2 col-sm-1 fas fa-save saveBtn');
-            saveButton.attr('id', 'btn' + i)
-            rowDiv.append(saveButton)
+            saveButton.attr('id', 'btn' + i);
+            rowDiv.append(saveButton);
     }
         
 }
@@ -55,11 +55,11 @@ function scheduelList() {
 
 
 function saveInput() {
-    localStorage.setItem($(this).attr('id'), $(this).siblings('.text-area-input').val() )
+    localStorage.setItem($(this).attr('id'), $(this).siblings('.text-area-input').val())
     
     $(this).transfer( {
-        to: $($(this)),
-      } );
+        to: $($(this))
+    });
 }
 
 window.onload = scheduelList();
