@@ -4,7 +4,7 @@ var containerElement = $('.container');
 // time array
 var timeArr = ['9AM', '10AM', '11AM', '12PM', '1PM', '2PM', '3PM', '4PM', '5PM']
 var currentTime = moment().hour() - 9;
-console.log(currentTime) 
+console.log(currentTime);
 
 // headline containing current date and time
 var currentDate = $('<h1>');
@@ -46,8 +46,8 @@ function scheduelList() {
         // create save button
         var saveButton = $('<button>');
             saveButton.attr('class', 'col-2 col-sm-1 fas fa-save saveBtn');
-            saveButton.attr('id', 'btn' + i)
-            rowDiv.append(saveButton)
+            saveButton.attr('id', 'btn' + i);
+            rowDiv.append(saveButton);
     }
         
 }
@@ -55,11 +55,11 @@ function scheduelList() {
 
 
 function saveInput() {
-    localStorage.setItem($(this).attr('id'), $(this).siblings('.text-area-input').val() )
+    localStorage.setItem($(this).attr('id'), $(this).siblings('.text-area-input').val())
     
     $(this).transfer( {
-        to: $($(this)),
-      } );
+        to: $($(this))
+    });
 }
 
 window.onload = scheduelList();
