@@ -3,7 +3,8 @@ var containerElement = $('.container');
 
 // time array
 var timeArr = ['9AM', '10AM', '11AM', '12PM', '1PM', '2PM', '3PM', '4PM', '5PM']
-var currentTime = moment().hour(); 
+var currentTime = moment().hour() - 9;
+console.log(currentTime) 
 
 // headline containing current date and time
 var currentDate = $('<h1>');
@@ -35,11 +36,11 @@ function scheduelList() {
             timeLabel.text(timeArr[i]);
             rowDiv.append(timeLabel);
 
-        // create input text box > save input to loval storage
+        // create input text box > save input to local storage
         var textInput = $('<textarea>');
-            textInput.attr('class', 'col-8 col-sm-10 description');
+            textInput.attr('class', 'col-8 col-sm-10 description text-area-input');
             textInput.addClass(timeClass)
-            // textInput.text(localStorage.);
+            textInput.text(localStorage.getItem('btn' + i));
             rowDiv.append(textInput);
 
         // create save button
@@ -51,4 +52,15 @@ function scheduelList() {
         
 }
 
+
+
+function saveInput() {
+    localStorage.setItem($(this).attr('id'), $(this).siblings('.text-area-input').val() )
+    
+    $(this).transfer( {
+        to: $($(this)),
+      } );
+}
+
 window.onload = scheduelList();
+$(".saveBtn").on("click", saveInput);
