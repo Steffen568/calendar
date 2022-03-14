@@ -3,7 +3,7 @@ var containerElement = $('.container');
 
 // time array
 var timeArr = ['9AM', '10AM', '11AM', '12PM', '1PM', '2PM', '3PM', '4PM', '5PM'];
-var currentTime = moment().hour() -9;
+var currentTime = moment().hour() - 12 ;
 console.log(currentTime);
 
 // headline containing current date and time
