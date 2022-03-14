@@ -3,7 +3,7 @@ var containerElement = $('.container');
 
 // time array
 var timeArr = ['9AM', '10AM', '11AM', '12PM', '1PM', '2PM', '3PM', '4PM', '5PM'];
-var currentTime = moment().hour() - 9;
+var currentTime = moment().hour() -9;
 console.log(currentTime);
 
 // headline containing current date and time
@@ -53,7 +53,7 @@ function scheduelList() {
 }
 
 
-
+// local storage function, save entry on screen.
 function saveInput() {
     localStorage.setItem($(this).attr('id'), $(this).siblings('.text-area-input').val())
     
@@ -62,5 +62,7 @@ function saveInput() {
     });
 }
 
+// on load, call scheduelList
 window.onload = scheduelList();
+// save button event listener
 $(".saveBtn").on("click", saveInput);
