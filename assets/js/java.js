@@ -57,9 +57,6 @@ function scheduelList() {
 function saveInput() {
     localStorage.setItem($(this).attr('id'), $(this).siblings('.text-area-input').val())
     
-    $(this).transfer( {
-        to: $($(this))
-    });
 }
 
 // on load, call scheduelList
